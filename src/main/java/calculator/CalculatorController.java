@@ -43,7 +43,8 @@ public class CalculatorController {
            }
            double number2 = Double.parseDouble(display.getText());
            double result = calculator.calculate(number1, number2, operator);
-           display.setText(String.format("%.4f", result));
+           display.setText(""+result);
+            // display.setText(String.format("%.4f", result));
            operator = "";
         } else {
             if (! operator.isEmpty()) {
