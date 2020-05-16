@@ -43,7 +43,7 @@ public class CalculatorController {
            }
            double number2 = Double.parseDouble(display.getText());
            double result = calculator.calculate(number1, number2, operator);
-           display.setText(String.format("%.0f", result));
+           display.setText(String.format("%.4f", result));
            operator = "";
         } else {
             if (! operator.isEmpty()) {
@@ -55,4 +55,22 @@ public class CalculatorController {
         }
     }
 
+    @FXML
+    public void processAC(ActionEvent actionEvent) {
+        display.clear();
+    }
+
+    @FXML
+    public void todouble(ActionEvent actionEvent) {
+
+        Integer num = Integer.parseInt(display.getText());
+        display.setText(""+num+'.');
+    }
+
+    @FXML
+    public void negate(ActionEvent actionEvent) {
+
+       double num = Double.parseDouble(display.getText()) * -1;
+        display.setText(""+num);
+    }
 }
